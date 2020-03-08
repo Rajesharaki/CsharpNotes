@@ -1,0 +1,25 @@
+                             JSON (JavaScript Object Notation)
+
+
+-->json is Data Representation Format
+
+-->commonly used for APIs and Configs
+
+-->LeightWeight and Easy to Read/Write
+
+-->Integrates easily wirh most languges
+                            
+                             JSON Types
+
+
+*String  : "hello world"
+
+*Numbers : 10 1.5 -3 1.2e10
+
+*Booleans : true ,false
+
+*null     : null
+
+*Arrays   : [1,2,3] , ["Hello" ,"World"]
+
+*Objects  : {"Key":"value"},{"age",22}

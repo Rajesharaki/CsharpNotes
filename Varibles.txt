@@ -1,0 +1,30 @@
+Variables:
+
+-static variable
+-non static variable
+-constant variable
+-ReadOnly variable
+
+STATIC VARIABLE:
+
+-->static variable: if the variable explicitly declared by using static modifiers or else
+if the variable declared under the static block that type of variable called static variable
+-->static variable have only one copy init.we can modified the static variable
+-->without creacting an instance we can access static variable.memory allocated at the time of declaration
+
+NON-STATIC VARIABLE:
+
+-->if the variable is not declared with any modifier that type of variable we called non static variable.
+-->memory allocated at the time of instance create.and this type variable have 'n' number of copies.
+
+CONSTANT VARIABLE:
+
+-->if the variable explicitly declared by using Const modifier that type of variable called Constant variable.
+-->it similar to the static variable but we can't modified constant variable.
+-->if Constvariable we must and should assign value at the time of declaration.
+
+READONLY VARIABLE:
+
+-->if the variable explicitly declared by using readOnly Modifier that type of variable called ReadOnly Modifiers.
+-->Memory allocated at the time instance create but the difference b/w non static and ReadOnly variable is if we declaread ReadOnly varaible once we can't modified
+-->It can have 'n' number of copies.

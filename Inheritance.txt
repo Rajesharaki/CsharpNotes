@@ -1,0 +1,32 @@
+Inheritance:
+
+Inherit the state and behovioues from one class to another class it's called inheritance.
+
+-->By using inheritance we can avoid the code repetation.
+-->we can't inherit sealed class and final class.
+
+there are 5 types of inheritance
+1.Single Inheritance
+2.Multiple Inheritance
+3.Hierarchical Inheritance 
+4.MultiLevel Inheritance
+5.Hybrid Inheritance
+
+1.Single Inheritance:
+                     One child class extend one parent class
+
+2.Multiple Inheritance:
+                     one child class extend Parent class again another child class extends Already derived class.
+
+3.Hierarchical Inheritance:
+                     Two child class extends one parent class
+
+4.MultiLevel Inheritance:
+                     One child class Extends two parent class.
+  -->this type of inheritance is possible only in inheritance.
+  -->thid type of Inheritance is not Possible in class due to
+       *Ambiguting in Constractor chaining
+       *Method duplication is Possible in this type of Inheiritance
+
+5.Hybrid Inheritance:
+                   It's combination of Multiple and hierarchical Inheritance

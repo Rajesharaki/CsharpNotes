@@ -1,0 +1,30 @@
+Method OverLoading:
+                  The methods have same name with differnt signeture is called Method over loading
+
+Method Duplication:
+                  the methods have same name with same signeture is called Method Duplication
+
+Method Override:
+                  Re-implementing the Inherieted method or change in implementation is called Method Overriding
+
+
+Difference B/W Method Overloading and Overrideing
+
+
+      METHOD OVER LOADING                                  METHOD OVER RIDING
+
+*we can overload constractor                       *we Can't override constructor
+
+*Access Modifier and return statement is not       *Access Modifier and return statement is consider
+consider in method over loading
+
+*method over loading is possible without           *method overriding is possible only through inheritance
+ inheritance
+
+*overloading method there is no keyword used       *method overriding we use override keyword
+
+*by method overloading we can achive compile       *by using method overriding we can achive Runtime polymarphism
+ tome poly marphism
+
+*Method over loading signeture should be diffent   *Method overriding method signeture is not considered
+

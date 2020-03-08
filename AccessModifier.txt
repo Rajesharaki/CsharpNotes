@@ -1,0 +1,22 @@
+Access MOdifier in C sharp
+  -public
+  -private
+  -internal
+  -protected
+  -protectedInternal
+
+public: 
+       if the class or class members are public that type of member we can use any where(Inside the project or outside the project)
+
+private:
+       if class member is private that type of member can be used only inside the class we can't use out side the class..
+Note:->we can't declare class as a private 
+
+internal: 
+       if the class or class member is private that type of member used  in child class or non child class in Same project we can't used this type of members outside the project child class
+
+Protected:
+       if the class or member are protected then thos type of members used in Child class any where
+
+ProtectedIntenal:
+       if the class or class member is ProtectedInternal we can use this type of member inside the child class or non childclass in same project and we can also use this type of members only inside child class outside the project
