@@ -23,8 +23,11 @@ consider in method over loading
 
 *overloading method there is no keyword used       *method overriding we use override keyword
 
-*by method overloading we can achive compile       *by using method overriding we can achive Runtime polymarphism
- tome poly marphism
+*by using method overloading we can achive compile *by using method overriding we can achive Runtime polymarphism
+ time polymarphism
 
 *Method over loading signeture should be diffent   *Method overriding method signeture is not considered
+
+*if Method is static,private or final method       *is method is static,private or final Method overriding isn't
+ overloading is possible                            possible
 

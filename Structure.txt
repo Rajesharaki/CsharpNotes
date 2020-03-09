@@ -6,9 +6,9 @@ Difference B/W Class and struct
 -->class is refence type where as struct is a value type   
 -->Memory allocation for instance of class is performed on managed heap
    where as memory allocation for instance of structure is performed on stack
--->we use class for representing an entitiy eith large volume of data
+-->we use class for representing an entitiy with large volume of data
    whereas we use strucure for representig smaller volume of data
---> Incase of class 'new' keyword is mandtory to create instance but in structure new key word is optional
+-->Incase of class 'new' keyword is mandtory to create instance but in structure new key word is optional
 -->Fields of class can be intialized at the time of declartion whereas it's not possible with fields in structure
 
 Syntax :

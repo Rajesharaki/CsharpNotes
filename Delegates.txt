@@ -1,0 +1,21 @@
+Delegates Example:
+-------------------
+
+  class Program
+    {
+        public static void Delegates(string UserName) //method code
+        {
+            Console.WriteLine("Hello "+UserName);
+        }
+        public delegate void DelegatesMethod(string UserName); //Declare Delgates the syntax is same as method syntax
+        static void Main(string[] args)
+        {
+            DelegatesMethod Methodcall = new  DelegatesMethod(Program.Delegates); //creating delagtes object and passing method
+            Methodcall("Rajesha");// by using Delegates method refence we calling method and here we pass method arguments.
+        }
+    }
+Defenation:
+------------
+* Delgates is a Type safe and it holds the method refence . By using Delegtes we make reuseable method code 
+* by using delgate keyword we declare delegate and the deleagate syntax same as the method syntax but in 
+  delgates we use delagate keyword

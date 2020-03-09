@@ -1,22 +1,26 @@
 METHOD EXTENSION :
+-------------------
 
 -->This is a new feature that has been added in CSharp 3.0
 
 -->By using inheritance we can extended(Added) the method. but if that class is sealed or final then
-   inheritance isn't possible(Like string class). that situation we go for method extension
+   method extension isn't possible in Ineritance(Like string class). that situation we go for method extension
 
 -->without using any source code we can extended methods 
 
--->How to bind (ADD) method into class
+-->How to bind (ADD) method into class:
+---------------------------------------
+
    *Create one static class(static class means it contain only static member)
-   *Extension method are defind as static bur they are bound with any class or structure they turned into non-static
-   *if the extension methid difned with the same name and signeture  of an existing method in the class,then extension method
+   *Extension method are defind as static but they are bound with any class or structure they turned into non-static
+   *if the extension method defined with the same name and signeture  of an existing method in the class,then extension method
     will not be called and the prefernce always goto the original method only
--->The first parameter of an extension method should be the name of the type of ehich that method has to br bound eith and this parameter
+-->The first parameter of an extension method should be the name of the type of which that method has to be bound with and this parameter
    is not considered while method calling
 -->an extension method should have one and only one binding parameter and it should be in the first place of parmeter list.
 
 Syntax:
+--------
 
 [<modifier>] [<return statement>][methodname](this exisiting class name variable,parameter)
 {

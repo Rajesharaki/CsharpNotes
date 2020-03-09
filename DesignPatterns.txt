@@ -1,0 +1,45 @@
+1) Why do we need Design Patterns?
+
+* How to properly create a class
+* How to interact between object
+* How to write LooseCoupling code
+* How to write Reusable Code
+
+2) What is Design Pattern?
+
+* A Well Defind solution to a Common Problem
+* Industry Standard Apporpach
+* Template, Not a solution
+* Language Independent
+
+3)Benfits of Design Pattern?
+
+* Robust code
+* Code Reusability
+* Highly Maintainability
+* We can achive loose coupling application
+
+4)Types Of Design Pattern?S
+
+1.Structural Design Pattern Ex:Adapter,Facade,Bridge/-
+2.Creational Design Pattern Ex:Singleton,Factory,Bridge Etc/-
+3.Behaviour Design Pattern Ex:Strategy,Observer,iterator Etc/-
+
+5)Best Practice in Design Pattern
+
+*Keep it simple
+*Excess of everything is abd
+*Focus on loose coupled code
+
+Creational Design Pattern:
+--------------------------
+-->Singleton Pattern:
+                     If we need a class to have to only one project,then we use the singleton Pattern
+
+why do we need only one object of a class?
+Ans:
+    Singleton Pattern used for logging,device drivers for printers or registry setting need
+to have only one of a kind, If there are multiple object we may encounter problem
+like incorrect program behaviour,inconsistent result etc/-.
+
+

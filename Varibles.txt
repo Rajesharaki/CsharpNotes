@@ -10,7 +10,7 @@ STATIC VARIABLE:
 -->static variable: if the variable explicitly declared by using static modifiers or else
 if the variable declared under the static block that type of variable called static variable
 -->static variable have only one copy init.we can modified the static variable
--->without creacting an instance we can access static variable.memory allocated at the time of declaration
+-->without creating an instance we can accessor call static variable.memory allocated at the time of declaration
 
 NON-STATIC VARIABLE:
 
@@ -21,7 +21,7 @@ CONSTANT VARIABLE:
 
 -->if the variable explicitly declared by using Const modifier that type of variable called Constant variable.
 -->it similar to the static variable but we can't modified constant variable.
--->if Constvariable we must and should assign value at the time of declaration.
+-->if Constant variable we must and should assign value at the time of declaration.
 
 READONLY VARIABLE:
 

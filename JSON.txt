@@ -7,7 +7,7 @@
 
 -->LeightWeight and Easy to Read/Write
 
--->Integrates easily wirh most languges
+-->Integrates easily with most languges
                             
                              JSON Types
 
