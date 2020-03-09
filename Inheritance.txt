@@ -32,3 +32,80 @@ there are 5 types of inheritance
 
 5.Hybrid Inheritance:
                    It's combination of Multiple and hierarchical Inheritance
+
+-->By using superclass refence we can create sub class object and by using super class refence we can access only 
+   super class member 
+
+ex:
+class Super
+{
+   public void MethodA()
+   {
+      Console.writeLine("Super class Method");
+   }
+}
+class SubClass:Super
+{
+   public void MethodB() 
+   { 
+     Console.WriteLine("Subclass Method");
+   }
+}
+class Test
+{
+  p s v m(String[] args)
+  {
+     Super s=new SubClass();
+     s.MethodA();// by using super class refence we create subclass object and we can access only subclass object method which are return super class 
+                   data types check :if we override any method from super class to sub class then by using super class refence we access sub class method mot super class method
+     //By type casting we can access Method B also
+     (SubClass)s.MethodB();
+  }
+}
+o/p: super class method
+
+class Super
+{
+   public virtual void MethodA()
+   {
+      Console.writeLine("Super class Method");
+   }
+}
+class SubClass:Super
+{
+   public override void MethodA()
+   {
+     Cosnsole.WriteLine("Override method");
+   }
+   public void MethodB() 
+   { 
+     Console.WriteLine("Subclass Method");
+   }
+}
+class Test
+{
+  p s v m(String[] args)
+  {
+     Super s=new SubClass();
+     s.MethodA();
+  }
+}
+
+o/p: override method
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
