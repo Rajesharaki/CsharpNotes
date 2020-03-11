@@ -1,0 +1,66 @@
+Thread:
+-------
+* Every application by Default contain one thread to excute the program and that is known ad Main thread.
+  So every program is by default single threaded model.
+
+MultiThreaing:
+--------------
+* Time sharing
+
+Advantages:
+-------------
+* Maximum utilazation of CPU resource.
+
+Ex:
+using system;
+using system.Threading;
+
+class ThreadTest
+{
+static void Method1()
+ {
+   for(int i=1;i<50;i++)
+    {
+      Console.WriteLine(i);
+    }
+ }
+static void Method2()
+ {
+   for(int j=1;j<50;j++)
+    {
+      Console.WriteLine(i);
+    }
+ }
+static void Method3()
+ {
+   for(int k=1;k<50;k++)
+    {
+      Console.WriteLine(i);
+    }
+ }
+staic void Main(String [] args)
+ {
+   Thread T1=new Thread(Method1);
+   Thread T2=new Thread(Method2);
+   Thread T3=new Thread(Method3)
+   T1.Start();T2.Start();T3.Start();
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
