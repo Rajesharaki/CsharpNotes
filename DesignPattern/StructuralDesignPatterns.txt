@@ -1,0 +1,46 @@
+Strutural Design Pattern:
+--------------------------
+* Structural Design Patterns are Design Patters that ease the design by indentifying a simple way to realie relationships b/w Entities
+
+Adapter Structural Design Pattern:
+----------------------------------
+* Adapter design pattern is design pattern.which allows incompitable objects to collabarate
+
+Facade Structural Design Pattern:
+----------------------------------
+*Facade Design Pattern is one of the Structural design patterns (such as Adapter pattern and Decorator pattern). 
+ Facade design pattern is used to help client applications to easily interact with the system.
+
+Proxy Design Pattern:
+---------------------
+* An object representing another object.
+* The Proxy pattern provides a placeholder or substitute object to control access to the original object
+
+Types:
+-------
+1.Remote Proxy
+2.Virtual Proxy
+3.Protection Proxy
+
+Why do we need Proxy:
+--------------------
+1.Remote Proxy:
+--------------
+               Handle remote method call because remote innvocation is complex.
+
+2.Virtual Proxy:
+----------------
+                Defer the creation of real subject because the creation is costly:
+
+3.Protection Proxy:
+-------------------
+                Check access to real subject (Or a subset of its functionality)         
+
+*Proxies may implement additional business rules before and or after calling a method on the real subject
+
+
+
+
+
+
+

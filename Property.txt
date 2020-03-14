@@ -1,0 +1,111 @@
+Property:
+---------
+         In java we using Encapsulation to Hide our Variables or Make read or write only like that in C#
+we use Property by using property we make variable hide or read or write only.
+
+Before going on properties lets have a look at why the concept of properties came into C#? The is because of two reasons:
+--------------------------------------------------------------------------------------------------------------------------
+
+*If the members of a class are private then how another class in C# will be able to read, write, or compute the value that field.
+
+*If the members of the class are public then another class may misuse that member. 
+
+Ex:
+---
+  public class Test
+    {
+        private int Id;
+        public string Name{get;set;} //Auto implementation Properties ... Compiler internally creates get an set method
+
+//Normal Properties
+        public int ID
+        {
+            get
+            {
+                return Id;
+            }
+            set
+            {
+                if (value < 1)
+                    throw new Exception("UnHandled exception");
+                Id = value;
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Test t = new Test();
+            t.ID = 25;
+            Console.WriteLine("Id: " + t.ID);
+            Test t1 = new Test();
+            t.ID = -25;
+        }
+    }
+
+What is the difference between AutoImplementedproperties and golbal variable:
+------------------------------------------------------------------------------
+
+1. Fields can’t be used in Interfaces:
+--------------------------------------
+if we use Fields(Golbal variable) then we can't use inside the interface because they are instance fields But if we use properties then  we
+can use inside the preperties;
+
+Ex:
+---
+(Valid)
+---------
+  public interface Test
+    {
+        public int Id { get; set; }
+    }
+
+(NotValid)
+----------
+ publilc interface Test
+  {
+    public int Id;
+  }
+
+2. Validation:
+--------------
+by using properties we make validation of that variable in Fields validation is not possible.
+
+One more example interface:
+---------------------------
+
+    public interface Test
+    {
+        public int Id { get; set; }
+    }
+    public class hello : Test
+    {
+        public int Id { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Test[] t = new Test[] { new hello() };
+            t[0].Id = 25;
+            Console.WriteLine(t[0].Id);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

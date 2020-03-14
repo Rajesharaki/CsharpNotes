@@ -17,3 +17,25 @@ Syntax :
 {
   Member(like Datafields,constructors,functions,property,events,indexer)
 }
+
+Imporatant Points:
+--------------------
+* Struct is a class but is light weight and faster
+* within a struct declaration fields are can't be intialized unless they are const or static 
+* struct may not declare a default constructor(a constructor without parameter)
+  or a destructor 
+*Struct are value types and classes are reference type(Value type are faster than the refrence type)
+*Struct contains only parameterized constructor and Nodestructors
+*Struct are by default sealed
+*Most of Primitive types in .Net are struct
+
+
+
+
+
+
+
+
+
+
+

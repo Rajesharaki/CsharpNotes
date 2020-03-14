@@ -1,0 +1,12 @@
+* Getter and Setter------------------
+* Property---------------------------
+* Enum-------------------------------
+* Struct-----------------------------
+* Delegates
+* Entity
+* Destructor
+* IEnumerable intreface
+* Datastrucure
+* Json(Serialization,Deserializatio,File I/O)
+* Interview questions
+* Design Pattern 

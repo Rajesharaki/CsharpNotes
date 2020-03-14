@@ -1,0 +1,74 @@
+* In C#  we have two ways to allocate the space in memory. i.e. either stack or heap memory based on Value type or Reference Type Parameter
+
+C# VALUE TYPE:
+--------------
+* Any thing which is stored in side the Stack memory is called ValueType.
+
+Ex:
+---
+Class Demo 
+{
+   static void Main(String [] args)
+   {
+     int firstValue=5;
+     int SecondValue=firstValue; // Its Create a memory in stack with reference SecondValue
+                                  ----------------------------------------------------------
+     Console.WriteLine($"Firstvalue:{firstValue} and SecondValue {SecondValue} "); // Output: FirstValue:5 and Secondvalue:5
+                                                                                           
+     SecondValue=10;  // It is the copy of the Second value and it won't affect to the first value (Means create one more memory in Stack)
+                      ---------------------------------------------------------------------------------------------------------------------
+     Console.WriteLine($"Firstvalue:{firstValue} and SecondValue {SecondValue} "); // Output: FirstValue:5 and Secondvalue:10
+   }
+   
+  
+}
+
+C# REFERENCE TYPE:
+------------------
+AnyThing which are stored inside the heap memory that's called Reference type
+
+public Class Demo
+{
+  public int FirstValue;
+} 
+public class Test
+{
+  static void Main()
+  {
+     Demo d=new Demo();
+     d.FirstValue=5;
+     Demo d1=d;
+     Console.WriteLine($"FirstObjValue: {d.FirstValue} and SecondObject: {d1.FirstValue}"); //FirstObjValue: 5 and SecondObject: 5
+                                                                                            ---------------------------------------
+     d1.FirstValue=10; // If we change one object content value which is affected to the Second ObjectReference
+                      -----------------------------------------------------------------------------------------
+     Console.WriteLine($"FirstObjValue: {d.FirstValue} and SecondObject: {d1.FirstValue}"); //FirstObjValue: 10 and SecondObject: 10
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

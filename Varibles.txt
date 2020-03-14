@@ -22,6 +22,7 @@ CONSTANT VARIABLE:
 -->if the variable explicitly declared by using Const modifier that type of variable called Constant variable.
 -->it similar to the static variable but we can't modified constant variable.
 -->if Constant variable we must and should assign value at the time of declaration.
+-->and we can provide const variable inside the interface it's work fine.
 
 READONLY VARIABLE:
 

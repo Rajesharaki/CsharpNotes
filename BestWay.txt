@@ -1,0 +1,27 @@
+we can fetch array values by using for each loop:
+--------------------------------------------------
+  
+public class hello 
+    {
+        public String Name { get; set; }
+        public int[] g = { 1, 2, 3 };
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            hello h = new hello();
+            foreach(int f in h.g)
+            {
+                Console.WriteLine($"g:{f}");
+            }
+            hello[] a = new hello[3];
+            a[0] = new hello { Name="Rajesha"};
+            a[1] = new hello { Name = "Madan" };
+            a[2] = new hello { Name = "Sanju" };
+            foreach (var b in a)
+            {
+                Console.WriteLine($"Name:{b.Name}");
+            }
+        }
+    }

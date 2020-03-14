@@ -1,0 +1,88 @@
+Enum:(Enumaration):
+--------------------
+
+*Enum represents a set of Named constants(If constant then we can't change the values associated with enums are treated as constant)
+*the enum keyword is used to declare an enumaration or enum
+*by default the first enumerator value is 0,
+*Enumaration makes your code much more readable and understandable
+*we can declare enum either inside class or out side the class but we can't write inside method
+*Enum can't inherit from other enum
+*Enum is by default sealed class Inheritance isn't possible
+*Enum can't inherit class or interface
+
+Note:
+----
+    Double and float are not integral types but they are floating types
+
+
+Realtime example in C# is:
+--------------------------
+
+If we want to change any text background color in C# .net provides one static variables that is
+
+Console.BackgroundColor=ConsoleColor.Black ;
+
+EX:   By default first variable index start from 0 and it's increment for next variable index
+-----
+
+enum Days
+    {
+        Sun,Mon,Tue,wen,Thr,Fri,Sat
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Days d = 0; //By default one value is 0 youndon't need to convert int to enum type
+                        ----------------------------------------------------------------------
+            Days d1 =(Days) 1;// but after you must and should convert int to enum type
+                              ----------------------------------------------------------
+            Console.WriteLine($"{d},{d1}"); //output: Sun,Mon
+
+            Console.WriteLine($"{Days.Sun},{Days.Mon}"); //or we can directly call the constant variable
+                                                         ------------------------------------------------
+            Console.WriteLine($"{(int)Days.Sun},{(int)Days.Mon}"); // or  if we want index then explicitly convert enum type to int type
+                                                                   ---------------------------------------------------------------------
+        }
+    } 
+
+Ex:  if we want that variable index not start from zero then
+---
+enum Days
+    {
+        Sun=1,Mon,Tue,wen,Thr,Fri,Sat // its start from on and increses for next variable
+                                      -----------------------------------------------------
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Days d = 0; //By default one value is 0 youndon't need to convert int to enum type  // its prints 0
+                      --------------------------------------------------------------------------------------------
+            Days d1 =(Days) 1;// but after you must and should convert int to enum type
+                                 ------------------------------------------------------
+            Console.WriteLine($"{d},{d1}"); //output: Sun,Mon
+            Console.WriteLine($"{Days.Sun},{Days.Mon}"); //or we can directly call the constant variable
+                                                          -------------------------------------------------
+
+            Console.WriteLine($"{(int)Days.Sun},{(int)Days.Mon}");// or  if we want index then explicitly convert enum type to int type
+                                                                   ------------------------------------------------------------------------
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
