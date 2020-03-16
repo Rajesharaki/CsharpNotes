@@ -1,0 +1,65 @@
+Indexers:
+--------- 
+* Indexer is member of a class if we use indexer our class behaves like a virtusl array
+
+Syntax:
+-------
+
+[<modifier>]<type>this[int index]
+{
+  [get{stmt}]
+  [set{stmt}]
+}
+
+EX:
+---
+ public class Employee
+    {
+        public int Eno { get; set; }
+        public string EName { get; set; }
+        public int Salary { get; set; }
+        public object this[int i]
+        {
+            get
+            {
+                if (i == 0) { return this.Eno; }
+                else if (i == 1) { return this.EName; }
+                else if (i == 2) { return this.Salary; }
+                else
+                    return null;
+            }
+            set
+            {
+                if (i == 0) { this.Eno = (int)value; }
+                else if (i == 1) { this.EName = (String)value; }
+                else if (i == 2) { this.Salary = (int)value; }
+                else
+                    Console.WriteLine("Index out of bound exception");
+            }
+        }
+    }
+   
+    public delegate bool CheckNumber(int number);
+    class Program
+    {
+       static void Main()
+        {
+            Employee e = new Employee();
+            e[0] = 1001;
+            e[1] = "Rajesha";
+            e[2] = 50000; // Assigining value based pn index
+
+            //getting value based on index
+
+            Console.WriteLine( $"ENo: {e[0]} \nEname: {e[1]}\nSalary: {e[2]}");
+        }
+    }
+
+
+
+
+
+
+
+
+

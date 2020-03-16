@@ -2,11 +2,11 @@
 * Property---------------------------
 * Enum-------------------------------
 * Struct-----------------------------
-* Delegates
-* Entity
-* Destructor
-* IEnumerable intreface
+* Delegates-------------------------
+* Destructor-------------------------
+* Indexors---------------------------
+* IEnumerable intreface--------------
+* Design Pattern 
 * Datastrucure
 * Json(Serialization,Deserializatio,File I/O)
 * Interview questions
-* Design Pattern 

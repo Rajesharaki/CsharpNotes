@@ -1,0 +1,26 @@
+Destructors:
+-------------
+             Destructors are methods inside the class used to destroy instance of that class when they are no longer needed 
+The Destructor is called implicitly by .Net Frame work's Garbage collector and therefore programmer has no control as when to invoke 
+the destructor.
+
+Important points:
+-----------------
+* A Destructor is unique to its class i.e there can't be more than one destructor in a class
+* A Destructor has no return type and destructor name should be same as Class name
+* A Destructor doesn't accept any parameter and modifier
+* It can't be declared in structure its anly used with classes
+* it can't be overloaded and inherited
+* It called automatically when the program exists
+* internally, Destructor called Finalized method on the base class object.
+
+
+syntax:
+------
+class Example
+{
+  ~Example()
+   {   
+     // your code
+   }
+}

@@ -31,8 +31,9 @@
 *Excess of everything is abd
 *Focus on loose coupled code
 
-Creational Design Pattern:
+Creational Design Pattern: 
 --------------------------
+Creational design patterns are design patterns that deal with object creation mechanisum
 -->Singleton Pattern:
 ----------------------
                      If we need a class to have to only one project,then we use the singleton Pattern.

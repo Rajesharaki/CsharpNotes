@@ -17,5 +17,234 @@ Delegates Example:
 Defenation:
 ------------
 * Delgates is a Type safe and it holds the method refence . By using Delegtes we make reuseable method code 
+* Delegates is a value type
 * by using delgate keyword we declare delegate and the deleagate syntax same as the method syntax but in 
   delgates we use delagate keyword
+
+IMP:
+---
+* By useing delegates we can achive loosecoupling
+
+MultiCast Delagates:
+----------------------
+                      It means it holds 2 method reference at time
+
+* If the methods are having same signeture along with same return type and we pass same value for both method then we go for delegates
+* If both methods are returnning same values then we get only last method return value
+
+Ex:
+---
+ public class Demo
+    {
+        public void GetArea(double width,double height)
+        {
+            Console.WriteLine("Area :  "+width * height);
+        }
+        public void GetPerimeter(double width,double height)
+        {
+            Console.WriteLine("Perimeter: "+2*(width + height));
+        }
+    }
+    delegate void Methods(double width, double height); //we can declare delegates inside the class or outside the class but not inside a method
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Demo d = new Demo();
+            Methods obj = d.GetArea;
+            obj += d.GetPerimeter;
+                // if we want call only one method then we create dlegates object if we want call more than one method then we go for binding
+            obj(25.4,42.1);
+            // obj.Invoke(65.1,55.1); we can call  by  using invoke method presents in delegates
+        }
+    }
+
+Anonymous method:
+------------------
+                  A method without a name 
+ * by using delegates we can call anonymous method .
+ * Anonymous metyhod is suitable for lesser code method
+ * Why we use anonymous because lesser typing work means we don't to write method name ,access modifier ,return type why because delgates alredy knows all those thing 
+   (At the time delegate declaration we declare method name,return type ,and access modifier)
+
+class Program
+    {
+        delegate string AnonymousMethod(String Name); 
+
+        static void Main(string[] args)
+        {
+            AnonymousMethod obj = delegate (string name) //this is called anonymous method
+              {
+                  return "Hello  " + name;
+              };
+            string output=obj("Rajesha");
+            Console.WriteLine(output);        }
+    }
+
+Lambda Expression:
+------------------
+* In above example we use anonymous method for less typing but we still use delagate keyword and method parameter why this are neccessay because already our delgates 
+  knows method parameter thats why we use Lambda Expression here there is no need to write all those stuff we can directly use Lambda.
+
+Ex:
+---
+
+class Program
+    {
+        delegate string AnonymousMethod(String Name);
+        static void Main(string[] args)
+        {
+            AnonymousMethod obj = (name) =>  //or we can write (string name)=>   parameter along with there type it's works but not neccessry
+              {
+                  return "Hello  " + name;
+              };
+            string output = obj("Rajesha");
+            Console.WriteLine(output);
+        }
+    }
+
+Generic Delegates:
+-------------------
+
+* instend of define or declare delegates we go for generic Delegates
+
+There 3 type of generic delegates
+1.func
+2.action
+4.predicate
+
+ class Demo
+    {
+        public static void Method1(string name)
+        {
+            Console.WriteLine("Hello " + name);
+        }
+        public static  string Method2(string name)
+        {
+           return "Hello" + name;
+        }
+        public static bool Method3(string name)
+        {
+            return name.Length > 5;
+        }
+    }
+   
+1.func:
+-------
+       when we us func generics delegates if the method returns primitive value we go for func delegtes
+* in func delegates there are 17 overloaded func genrics delegates methods are there
+Ex:
+---
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            Action<string > obj1 = Demo.Method1;
+            obj1.Invoke("Rajesha")
+        }
+
+syntax:
+-------
+func<types parameter,return type>
+
+2.action:
+---------
+      when we use action generic delegates if that method return nothing(void) then we go for action
+
+* in func delegates there are 16 overloaded func genrics delegates methods are there
+
+syntax:
+-------
+Action<types parameter,return type>
+
+Ex:
+---
+    Func<string, string> obj2 = Demo.Method2;
+            string hold=obj2.Invoke("Madan");
+            Console.WriteLine(hold);
+
+           
+3.predicate:
+------------
+     when we use predicate generic delegates if that method return bool values then we go for predicate
+
+syntax:
+-------
+Pridicate<type parameter>
+
+Ex:
+----
+            Predicate<string> obj3 = Demo.Method3;  // or we can use Func also Func<string,bool> it's work fine but good practice we go for Predicate
+            bool h=obj3.Invoke("Sanju");
+            Console.WriteLine(h);
+
+
+
+Code Reuseability (LooseCoupling)EX:
+---------------------------------------
+ class Demo
+    {
+        public static void PrintNumbers(int[] n,CheckNumber check)
+        {
+            foreach(int b in n)
+            {
+                if (check(b))
+                {
+                    Console.WriteLine(b);
+                }
+            }
+        }
+    }
+    public delegate bool CheckNumber(int number);
+    class Program
+    {
+        static int[] numbers = { 1, 5, 10, 12, 50, 100, 150, -1, -2 };
+        static void Main(string[] args)
+        {
+            Action<int[], CheckNumber> obj = Demo.PrintNumbers;
+            obj.Invoke(numbers, LessThanFifty);
+            Console.WriteLine("-----------------------------------------------------");
+            Action<int[], CheckNumber> obj1 = Demo.PrintNumbers;
+            obj.Invoke(numbers, GreaterThanFifty);
+        }
+        public static bool GreaterThanFifty(int n)
+        {
+            return n > 50;
+        }
+        public static bool LessThanFifty(int n)
+        {
+            return n < 50;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

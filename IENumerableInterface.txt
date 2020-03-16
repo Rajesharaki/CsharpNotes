@@ -1,0 +1,71 @@
+IEnumerable Intreface and IEnumerator interface:
+------------------------------------------------
+* when ever we work with collection in C# we need to iterate the items of the collection.one way of doing so is foreach loop.
+* To enable iteration over items of a class the class should implements IEnumerable interface. this IEnumerable interface again inherits from IEnumerator intrface
+
+
+IEnumerator interface:
+----------------------
+We have 3 methods
+
+1. object current{get; }  //Gets the current element in the collection and returns the current element in the collection
+2. bool MoveNext(); //adavance the enumerator to the next element of the colllection and returns true if the enumerator successfully advanced to the next element else return false
+3. void Reset(); //Sets the enumerator to its intial position which is before the first element in the collection 
+
+Ex:
+---
+ public class Node
+        {
+            public Node Prev { get; set; }
+            public Node Next { get; set; }
+            public T Data { get; set; }
+            public Node(T Data)
+            {
+                this.Data = Data;
+            }
+        }
+        Node Head;
+        static int Size = 0;
+
+        public object Current => Head;
+
+        public void Add(T Data)
+        {
+            Size++;
+            Node node = new Node(Data);
+            if (Head == null)
+            {
+                Head = node;
+                return;
+            }
+            Node t = Head;
+            while (t.Next != null)
+            {
+                t = t.Next;
+            }
+            t.Next = node;
+        }
+        public IEnumerator GetEnumerator()
+        {
+            T[] array = new T[Size];int k = 0;
+            Node t = Head;
+            while (t!=null)
+            {
+                array[k++] = t.Data;
+                t = t.Next;
+            }
+            return array.GetEnumerator();
+        }
+    }
+    class Test
+    {
+        static void Main()
+        {
+            Person<int> obj = new Person<int>();
+            obj.Add(1); obj.Add(11); obj.Add(12); obj.Add(13);
+            foreach (var b in obj)
+            {
+                Console.WriteLine(b);
+            }
+        }
+    }
