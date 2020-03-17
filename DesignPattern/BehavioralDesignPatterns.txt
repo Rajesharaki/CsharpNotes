@@ -20,7 +20,8 @@ When we click on checkout button, it calculates the total amount to be paid. Now
 
 3.Mediator Design Pattern:
 --------------------------
-Mediator Design Pattern is very helpful in an enterprise application where multiple objects are interacting with each other. If the objects interact with each other directly, the system components are tightly-coupled with each other that makes higher maintainability cost and not hard to extend. 
+Mediator Design Pattern is very helpful in an enterprise application where multiple objects are interacting with each other. If the objects interact with each other directly, 
+the system components are tightly-coupled with each other that makes higher maintainability cost and not hard to extend. 
 Mediator pattern focuses on provide a mediator between objects for communication and help in implementing loose-coupling between objects.
 Allows loose coupling by encapsulating the way disparate sets of objects interact and communicate with each other. 
 

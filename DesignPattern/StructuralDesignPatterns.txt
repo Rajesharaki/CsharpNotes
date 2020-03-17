@@ -1,6 +1,6 @@
 Strutural Design Pattern:
 --------------------------
-* Structural Design Patterns are Design Patters that ease the design by indentifying a simple way to realie relationships b/w Entities
+* Structural Design Patterns are Design Patters that ease the design by indentifying a simple way to realzie relationships b/w Entities
 
 Adapter Structural Design Pattern:
 ----------------------------------

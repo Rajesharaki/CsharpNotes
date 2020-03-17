@@ -6,7 +6,9 @@
 * Destructor-------------------------
 * Indexors---------------------------
 * IEnumerable intreface--------------
-* Design Pattern 
+* Design Pattern ---------------------------
+1.AutoMapper
+2.Reflection
 * Datastrucure
 * Json(Serialization,Deserializatio,File I/O)
 * Interview questions

@@ -1,0 +1,28 @@
+AutoMapper:
+-----------
+* Auto mapper is nothing but mapping one object to anthoer
+                        or
+* Copy or transfer  the data from one class object to another class object
+
+
+Reflection:
+-----------
+Reflection is the ability of inspecting an assemblies metadata at runtime.it is used to find all tyoes in an assembly and or dynamically invoke 
+methos in an assembly.
+
+Uses of Reflection:
+-------------------
+1. When you drag and drop a button on a win forms or an asp.net application. The properties window uses reflection to show all the properties of the
+Button class . So reflection is extensively used by IDE or a UI designers
+
+2.Late binding can be achived by using reflection.You can use reflection to dyanmically create an instance of a type,about which we don't have any information
+at compile time . So ,reflection enables you to use code that is not available at compile time.
+
+3.Consider an Example where we have two alternate implementation of an interface. You want to allow the user to pick one or the other using a config file.
+with reflection you can simply rerad the name of the class whose implementation you want to use from the config file, and instantiate an instance of that class.
+this is another example for late binding using reflection.
+
+
+
+
+
