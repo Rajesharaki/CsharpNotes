@@ -1,0 +1,380 @@
+ADO.NET:
+--------
+* SqlConnection con = new SqlConnection("Connection String"); this object present in System.Data.SqlClient Name Space
+* OracleConnection object present in System.Data.SqlClient Name Space
+* Sql Connection object used to establish the connection between Data base
+* Conection string @"DataSource=(localdb)\MSSOLLocalDB;DataBase=Databasename;Integrated security=true"
+
+Code:
+-----
+using System.Data.SqlClient
+
+try
+{
+  SqlConnection con =new SqlConnection(@"DataSource=(localdb)MSSQLLocalDB;Database=Sample; Integrated security=true");
+  SqlCommond cmd=new SqlCommand("Select * from Employee",con);
+  con.Open();
+  GridView1.DataSource=cmd.ExcuteReader();
+  GridView!.DataBind();
+  con.Close();
+}
+catch{}
+finally
+{
+  if(con!=null){con.close();}
+}
+
+* Connection must and should close at the end why because all connection string ard costly resources.
+* if want to handle exception then we go for try and catch block and in final block we close the connection if we don't want handle exception then we go for using keyword if we use using key word
+ we don't want to close connection it can close automatically at the end
+
+using:
+-----
+ using(SqlConnection con =new SqlConnection(@"DataSource=(localdb)MSSQLLocalDB;Database=Sample; Integrated security=true"))
+      {
+       SqlCommond cmd=new SqlCommand("Select * from Employee",con);
+       con.Open();
+       GridView1.DataSource=cmd.ExcuteReader();
+       GridView!.DataBind();
+       con.Close();
+      }
+
+Web.Config:
+-----------
+* if we write connection string directly to the code its become hard code if we want to connect another database we must write all code again instead of doing this write connection string
+  into the web.config file (ASP.NET) or APP.config (WINDFORM) or Console (Create app.config file)
+
+ex:
+----
+<configuration>
+ <connectionString>
+   <add name="DBCS" //optional we can write any name
+       connectionString="DataSource=(localdb)MSSQLLocalDB;Database=Sample; Integrated security=true"
+       providerName="Syatem.Data.SqlClient"/>
+</connectionString>
+
+using System.Configuration;
+
+string cs=ConfigurationManager.ConnectionString["DBCS"].ConnectionString;
+using(SqlConnection con =new SqlConnection(cs))
+      {
+       SqlCommond cmd=new SqlCommand("Select * from Employee",con);
+       con.Open();
+       GridView1.DataSource=cmd.ExcuteReader();
+       GridView!.DataBind();
+       con.Close();
+      }
+
+
+SQLCOMMAND:
+----------
+*SqlCommand class is used to prepare an SQL statement 
+
+The most commonly used methods of the SqlCommand class
+
+1.ExecuteReader:-
+-----------------
+Use when the Table sql statement returns more than a single value. For example , if the query returns rows of dara
+
+2.ExecuteScalar:-
+-----------------
+Use when the query returns a single value. For example ,Querues that returns total number of rows in a table.
+
+3.ExcuteNonQuery:-
+------------------
+Use when you want to perform an insert,upadate or Delete operation.
+
+SQL INJECTION ATTECK:
+---------------------
+for ex we one table
+product
+-------
+-IPad
+-IPhone
+
+code:
+----
+String cs=Confogurationmanager.ConnectionStrings["Rajesha"].ConnectionString;
+using(SqlConnection con=new SqlConnection(CS))
+ {
+   String Command="Select * from Empolyee where Dept like'"+Textbox1.Text+"%'" //it means if user enter any letter its shows that same letter dept its work fine if good user
+                                                                               //if some one try hack (or bad) if he write this code (';Delete from Employee--) inside the textbox its delete
+                                                                               //that records inside the table this called Sql injectio attack (in above code '; means enda the programer query
+                                                                               //after that he  write some query and -- means in sql the symbol for commenting its comments further programmer code)
+
+Note:
+-----
+Preventing sql Injection we use parameterized queries and stored procedure
+
+Parameterized quries:
+---------------------
+Instead of using above code we write parmeterized code
+
+String cs=Confogurationmanager.ConnectionStrings["Rajesha"].ConnectionString;
+using(SqlConnection con=new SqlConnection(CS))
+ {
+   String Command="Select * from Empolyee where Dept like @Dept";
+   SqlComand cmd=new SqlCOmmand
+   Command.Parameters.AddWithValue ("@Dept",Textbox1.Text+"%"); // Here we passing value to the parameter AddWithValue()method take two parameter here one is parameter and second one is value that passing 
+                                                            //Parameter and its come for text box by using this type quereies we avoid Sql injection
+
+//And The hacker code treated as value means its not treate that as sql quereies
+
+Stored Procedure:
+-----------------
+stored producer is a database object its contain set of precompiled query.
+
+Why do we need:
+----------------
+* why because it s removes the Sqlinjection
+* if we not use we pass query from front end to backend each and every time that code will be compile and run if this happens then serever barden is happen
+* if we send Query from frontend to abck end that code we can't reuse that reasons we go for Stored procedure
+
+Synatx:
+-------
+CREATE PROCEDURE Prodcedure name'=
+As
+ BEGIN
+      statment
+ END
+
+ex:
+---
+String cs=Confogurationmanager.ConnectionStrings["Rajesha"].ConnectionString;
+using(SqlConnection con=new SqlConnection(CS))
+ {
+   String Command="strprocedurename"; 
+   SqlCommand cmd=new SqlCommand(Command,Con);
+   cmd.CommandType=System.Data.CommandType.StoredProcedure;
+   cmd.Parameters.AddWithValue ("@Dept",Textbox1.Text+"%");
+
+SqlDataReader:
+--------------
+Reads data in the most efficent mannaer possible
+
+* SqlDataReader is read only and forward only, meaning once you read a record and go to the next record ,there is no way to go back previous record
+
+Note:
+-----
+* instance of SqlDataReader cann't be created using new operator.
+* thr SqlCommand object's ExecuteReader() method creates and returns an instance of SqlDataReader
+* SqlDataReader is a costly resource we must and should close
+* by using SqlDataReader we can Fetch Row by row data
+
+using(SqlConnection con=new SqlConnecction(cs))
+{
+  SqlCommaond cmd=SqlCommand("Select * from the table",con)
+  using(SqlDataReader Reader=cmd.ExecuteReader())
+    {
+       DataTable EmployeeTable=new DataTable(); //Creating New Employee datatable
+       EmployeeTable.Columns.Add("Id"); //Adding colums in table
+       EmployeeTable.Columns.Add("Name"); 
+       EmployeeTable.Columns.Add("Dept");
+       EmployeeTable.Columns.Add("DeptId");
+       EmployeeTable.Columns.Add("Salary");
+       EmployeeTable.Columns.Add("Bonus");
+      while(Reader.Read()) //Its return boolen values based on row present or not
+       {
+         DataRow row=table.NewRow(); //Creating new row in Employee table
+         int salary=convert.ToInt32(Reader["Salary"]); //It take salary from tblempolyee table
+         int bonus=salary*0.9;
+         row["Id"]=Reader["EmployeeId"]; //copying values from one table to another table
+         row["Name"]=Reader["Name"];
+         row["Dept"]=Reader["Dept"];
+         row["DeptId"]=Reader["DeptId];
+         row["Salary"]=Reader["salary"];
+         row["bonus"]=bonus; //Adding calculated value to the table
+         EmployeeTable.Rows.Add(row); //Adding row to the Employee table
+        }
+     GridView.Text=EmployeeTable;//here we adding new created table not Red table
+     GridView.Bind();
+    }
+
+just for adding bonus column we need write this much logic no we just use below code thats enough
+
+Select * ,(salary*0.9) as Bonus from tblemployee
+
+then why do we need this if somewhere else we want fetch data row by row that time we go for SqlDataReader note we can't create SqlDatareader instance by using new Key word
+
+
+Imp:
+----
+SqlCommand cmd = new SqlCommand("select * from Teacher;select * from Student;", con);
+                con.Open();
+                using(SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    //Here we want to Display two table at a time thats why The SqlDataReader is most important
+                    //Read(),NextResult(), this two method are very important int SqlDataReader
+                    TeacherView.DataSource = rdr;
+                    TeacherView.DataBind();
+                    while (rdr.NextResult()) //Cursor moves to the Next statement
+                    {
+                        StudentView.DataSource = rdr;
+                        StudentView.DataBind();
+                    }
+                }
+
+
+SqlDataAdapter and DataSet:
+----------------------------
+* SqlDataAdapter and DataSet provides us with disconnected data access model.
+* instead of using SqlCommand and SqlDataReader we can use SqlDataAdapter and Dataset if we use this we don't want open connection and also the SqlDataAdapter.Fill(Dataset)
+will do that things
+* we can display more than one table very easly without using NextResult() method
+
+Ex:
+----
+  string Cs = ConfigurationManager.ConnectionStrings["rajesha"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(Cs))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("StrStudent", con); //Stored procedure
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure; //Not compolsary but good practice
+                DataSet dataset = new DataSet(); //Its like SqlDataReader All table stored into the dataset
+                adapter.Fill(dataset); //It will do connection open and close automatically
+                TeacherView.DataSource = dataset.Tables[0]; 
+                TeacherView.DataBind();
+                StudentView.DataSource = dataset.Tables[1];
+                StudentView.DataBind();
+                FriendView.DataSource = dataset.Tables[2];
+                FriendView.DataBind();
+            }
+
+we can write dataset.Tables[0] or dataset.Tables["table] it's ok work fine but diffecult to read that reason we maintain proper name for each table like below example
+
+Ex:
+---
+ SqlDataAdapter adapter = new SqlDataAdapter("StrStudent", con); //Stored procedure
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure; //Not compolsary but good practice
+                DataSet dataset = new DataSet(); //Its like SqlDataReader All table stored into the dataset
+                adapter.Fill(dataset); //It will do connection open and close automatically
+                dataset.Tables[0].TableName = "Teacher";
+                TeacherView.DataSource = dataset.Tables["Teacher"]; 
+                TeacherView.DataBind();
+
+                dataset.Tables[1].TableName = "Student";
+                StudentView.DataSource = dataset.Tables["Student"];
+                StudentView.DataBind();
+
+                dataset.Tables[2].TableName = "Friends";
+                FriendView.DataSource = dataset.Tables["Friends"];
+                FriendView.DataBind();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

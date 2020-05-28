@@ -1,0 +1,14 @@
+Int v/s BigInt
+-------------------
+              Int                                      BigInt
+           ----------                               -------------
+
+ * The size of Int is                        *the size of BigInt is
+   4 byte=32 bits                             8 byte=64 bits
+
+Collation :
+-----------
+ Collation refers to a set of rules that determine how data is sorted and compared.
+ 
+* Character data is sorted using rules that define the correct charcter sequence, with options for specifying case-sensitnity
+  ,accent marks,Kana chatacter types and character width

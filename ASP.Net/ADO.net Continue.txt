@@ -1,0 +1,75 @@
+Caching DataSet:
+-----------------
+cache means every time fetching data from database it reduce our application performance and if we want last displayed data then we go for cache its cache previous dissplayed data 
+and returns
+
+Ex:
+---
+Caching data :
+--------------
+Ex:
+---
+ if (Cache["Data"] == null) //If cache keyword (data) is null then fetch data from database else
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("select * from Student;", con);
+                    DataSet dataset = new DataSet();
+                    adapter.Fill(dataset);
+                    Cache["Data"] = dataset;  //here cache the data from dataset and stroed into the "data" key word and thats stores that data in webserver memory.
+                    GridView1.DataSource = dataset;
+                    GridView1.DataBind();
+                    lblmsg.Text = "Data loaded successfully"; //Printing msg
+                }
+                else
+                {
+                    GridView1.DataSource = (DataSet)Cache["Data"]; //Here inside Data keyword stores the Dataset object and it return object that why i done type casting
+                    GridView1.DataBind();
+                    lblmsg.Text = "Data loaded from Cache successfully"; //Printing msg
+                }
+
+Clear Cache:
+------------
+Ex:
+---
+ if (Cache["Data"] != null)
+            {
+                Cache.Remove("Data");// CACHE  is a golbal access and it contain Remove method its removes whatever stored inside the keyword
+                lblmsg.Text="Cache is clear";
+            }
+            else
+            {
+                lblmsg.Text = "Nothing is there to clear";
+            }
+
+
+SqlCommandBulider:
+------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+ER Diagram (Entity Realation ship diagram):
+---------------------------------------------
+It is a systematic way of describing and defining a business process
+
+ENTITY RELATION SHIP:
+----------------------
+1.One-to-one
+2.One-to-many
+3.Many-to-many

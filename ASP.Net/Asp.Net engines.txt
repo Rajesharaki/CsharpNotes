@@ -1,0 +1,44 @@
+Out of the box Asp.net offers the following 2 view engines
+1.ASPX
+2.Razor
+
+1.What is the difference between RAZOR and ASPX view engines?
+Ans:
+    It mostly boils down the syntax otherwise there are no major difference between the two. In ASPX view engine,the serverside script is wrapped between <% %>,where as in Razor we use @.
+Razor view have the extension based on language if we use c# then .cshtml or if its VB then .vbhtml where as ASPX views has the extension of .ASPX
+
+2.is it possible to have both RAZOR and ASPX view in one Application?
+Ans:
+----
+    Yes, but at that we must and should mention the view Name
+
+Convention used by MVC to find views:
+--------------------------------------
+*By convention MVC looks for a view with the same name as that of the controller action method name in the folloeing locations
+1.Views/FolderNameMatchingControllerName
+2.Views/Shared
+
+Note:
+----
+the view extensiona can be any of the folloeing
+1).cshtml -->Razor engine view (C#)
+2).vbhtml -->Razor Enginr view (VB)
+3).aspx --> aspx engine
+4).ascx --> paritial view
+
+for example in my project i have following views which one will excute
+1.index.cshtml
+2.index.aspx
+3.index.ascx
+4.index.ascx
+
+by default it will search and excute index.aspx but if view want to excute index.cshtml or so on we
+entred path inside the controller action method view()
+~ its indecates current foloder
+
+ex:
+---
+public ActionResult Index()
+{
+  view("~Views/ControllerName/Views/index.cshtml)
+}

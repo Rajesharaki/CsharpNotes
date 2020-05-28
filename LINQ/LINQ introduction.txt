@@ -1,0 +1,76 @@
+What is LINQ?
+---------------
+               LINQ stands for language integrated query. LINQ enables us to query anytype of datastore(Sqlserver,XML documentation,Object in memory etc)
+
+Why should we use LINQ?
+-----------------------
+                        DOTNET Application
+             ----------------------------------------------
+            |                     |                       |
+       ADO.NET SQL            XPATH                   ARRAY GENERICS
+        (database)            XSLT
+                             (XML DOcumentation)       (IN memory)
+
+Benifits:
+--------
+LINQ enables us to work with different data source using a similar coding style
+without having the need to know the syntax specofic to the data source. Another benfits of using LINQ is that it provides intellisence and compiletime error
+checking 
+
+
+LINQ Provider:
+--------------
+              LINQ provider is a component between the LINQ query and the actual datasource.
+which converts the LINQ query into a format that the underlying data source can understand
+
+
+For ex LINQ to SQL Provider converts a LINQ query to T-SQL that SQL server database can understand
+
+
+Classification                           Standard Query Operator
+---------------                          -----------------------
+
+* Filtering                              Where,OfType
+
+* Sorting                                OrderBy,OrderByDescending,ThenBy,ThenByDescending,Reverse
+
+* Grouping                               GroupBy,ToLookup
+
+* Join                                   GroupJoin,Join
+ 
+* Projection                             Select,SelectMany
+
+* Aggregation                            Aggregate,Average,Count,LongCount,Max,Min,Sum
+
+* Quantifiers                            All,Any,Contains
+
+* Elements                               ElementAt,ElementAtOrDefault,First,FirstOrDefault,Last,LastOrDefault,Single,SingleOrDefault
+
+* Set                                    Distinct,Except,Intersect,Union
+
+* Partitioning                           Skip,SkipWhile,Take,TakeWhile
+
+* Concatenation                          Concat
+
+* Equality                               SequenceEqual
+
+* Generation                             DefaultEmpty,Empty,Range,Repeat
+
+* Conversion                             AsEnumerable,AsQueryable,Cast,ToArray,ToDictionary,ToList
+
+ LINQ Standard Query operator also called as LINQ extension methods can be brodly classified into the following categories
+---------------------------------------------------------------------------------------------------------------------------
+
+* Aggeregate operators  *Restriction Operator  * Conversion Operator  *Join Operator
+* Grouping Operators    *Projection Operator   * Query Rxecution      *Custom Sequence Operators
+* Quantifiers Operator  * Miscelianeous Operators * Genaration Operators
+
+
+*Aggeregate Operator:
+---------------------
+->Min ,->Max ,->Sum ,->Count ,->Average ,->Aggerate
+
+
+
+
+

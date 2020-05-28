@@ -1,0 +1,21 @@
+Difference between InnoDB and MYISAM:
+--------------------------------------
+             InnoDB                                          MyISAM
+    - --------------------------                 ---------------------------------------
+ * Default storage engine as of MySql          *Default storge engine as mysql before 5.5
+   5.5
+
+ *ACID cmplaint (Atomocity Consistency         * Not ACID complaint
+  Isolation Durability)
+
+ * It support Transacational                   * Not support Transcational
+  (Rollback,commit)
+ 
+ * Row Level Locking                           * Table Level Locking
+
+ * Row data stored in pages as per             * No Paricular order for data stored
+   Primary key order
+
+ * Supports Foreign Keys                       * Doesn't support realtionship constraint
+
+ * not support full text search                * Its supports Full text search

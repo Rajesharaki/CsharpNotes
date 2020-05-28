@@ -1,0 +1,134 @@
+ASP.Net: (Active Server Page)
+-------
+Asp.Net is a technalogy or a frame work to produce dynamic web application.
+
+IIS(Internet information Services)
+------------------------------------
+
+
+Inline Code
+------------
+* the Design code and business code write inside a single page is called Inline code
+
+Code behiind:
+--------------
+* the Design code and business code write inside a different pages is called Code behind
+
+
+App_Starts:
+-----------
+->RouteConfig.cs
+->BundleConfig.cs
+->FilterConfig.cs
+->Startup.Auth.cs
+->WebApiConfig.cs
+
+App_Data:
+---------
+it contain all local data base files
+
+Adavanatges of MVC:
+---------------------
+* Develop highly Scalable appalication means we can develop any application like mobile .desktop,webapplication
+* Highly testable application
+* highly securable 
+
+
+
+
+1.Business layer (model) :its intracate with DB
+2.Logic layer (Controller) :its interface b/w model and view and its carry the url 
+3.Presentation layer (view)
+
+Why MVC is popular:
+------------------
+* MVC supports all the modern client scriptin langauges like javascript,jquery,angularjs , node js etc
+* its light weight framework
+
+Engine which supports MVC:
+----------------------------
+1.Razor engine (why we use this because its comes with along .cshtml)
+2.aspx engine (traditional programming engine)
+
+Update model:
+-------------
+ throws an exception if vakidation fails,where as TryUpdateModel() will never throw an exception
+* The similarity is, both the function are used to update the model with  form values and perform the validations
+
+Include Properties:
+---------------------
+* for eaxmple i want to edit all content in the table except Name thats why we change view inside instead  of using @Html.Editfor() we use @Html.DisplayFor() but if we use fiddla or other ide
+we can change the Name Thats cause we go for Include or Exclude properties
+
+public ActionResult Edit(int id)
+{
+  EmployeeBusineesLayer layer =new EmployeeBusinessLayer();
+  Employee employee=layer.employees.Single(emp=>emp.Id==id); //it return single employee object
+  UpdateModel(employee,new string[]{"id","City","Salary"}; //It update all content what we entered into the form except Name this is include properties 
+//Exclude properties UpdateModel(employee,null,null,Name); here except Name it updates all contnt to that object
+ if(ModelState.IsValid)
+ {
+    layer.SaveEmployee(employee);
+    return RedirectToAction("Index");
+  }
+return View();
+}
+
+Note:
+-------
+* Delete a record by using get request is not good why because for example if we want upadate some images by using Get request it delete the record insted of using getreuest we use GetPost
+ it sshows dialbox check youtube for more information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

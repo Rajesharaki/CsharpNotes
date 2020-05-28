@@ -1,6 +1,6 @@
 Indexers:
 --------- 
-* Indexer is member of a class if we use indexer our class behaves like a virtusl array
+* Indexer is member of a class if we use indexer our class behaves like a virtual array
 
 Syntax:
 -------

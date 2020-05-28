@@ -1,0 +1,31 @@
+Ajax:
+-----
+ AJAX stands for "asynchronus javascript and XML".allows for asynchronus communication,instead of freezing up until the
+the completeness, the browser can communicate with server and contineous as normal.
+
+Ex:
+----
+$(document).ready(function()
+{
+   $('#update').click(function()
+{
+     $.ajax({
+                type:'Get',
+                url='Home/index',
+                datatype:'html',
+                success:function(data)
+                {
+                    $('ul').append(html);
+                }
+                error:function(error){ alert('An error occured'};
+                complete:function(data){alert('process completed')
+            })
+});
+});
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+Formmater and Content Negtiation:
+=================================
+-->Input Formatters
+    *Request : input formatter deals with only Http request and here client telling to server in which data format to data comes
+    *we use HttpHeader "content-type" for that
+
+StartUp.cs
+-------
+AddMvc(Config=>
+{
+  config.ReturnHttpResponseAccecptable=true; //// it return 406 NotAccecptable status code if we accecpt different data format which we are not configure in Mvc
+  config.InputFormmater.Add(new xmlSerializerInputFormatter()); //Now it can accecpt data in xml format also
+})
+
+
+-->Output formatter:
+   *Response :output formatter deals with Http response and here the client telling to the server that his acecpting data in specific format
+   *we use Http header "Acecpt " for that
+
+Startup.cs
+-----------
+AddMvc(Config=>
+{
+  config.ReturnHttpResponseAccecptable=true; //// it return 406 NotAccecptable status code if we accecpt different data format which we are not configure in Mvc
+  config.OutFormmater.Add(new xmlSerializerOutputFormatter()); //Now it can return data in xml format also
+})
+
+CORS(Cross-origin resource sharing):
+-------------------------------------
+means if we want make our api public acceccss we should have to enable CORS that means different domines can access our api.
+
+DOM(Document object model):
+---------------------------
+                           When a browser loads a web page, the browser creates a document object model of that page
+
+
+Cursor:
+--------
+here we can fetch data row by row basis and the cursor reduce our appplication performance most of time we should have to avoid cursor for better performance
+
+Batch Processing:
+-----------------
+                Batch processing means we are working with data that's already stored such as:
+   ->Log Processing
+   ->Data warehousing (such as Azure storage)
+
+
+Indexing in table:
+------------------
+
+Why indexers:
+--------------
+* indexer are used by queries to find data from table quickly. indexer are created on tables and Views
+
+* it increases the performance of the query
+
+Creating an Index:
+------------------
+
+Create Index IX_tblemployee_Salary
+ON tblEmployee (Salary ASC)
+
+* to find indexer in database we use thid command
+   
+   (sp_Helpindex name of the indexer)
+   (execute sp_helpindex name of the indexer)
+
+*To drop the indexer we user this command
+   (drop index tablename.indexerName)
+
+Different types of Indexer:
+---------------------------
+1.Clustered
+2.Nonclustered
+3.Unique
+4.Filtered
+5.xml
+6.Full Text
+7.spatial
+8.columnstore
+9.index with included columns
+10.index on computed columns
+
+1.Clustered:
+------------
+            A clustered index determines the physical order of data in a table. for this reason, a table can have only one clustered index
+
+* when we create table if ID is primary by default clustered indexer is created
+
+( Create clustered INdex Name of the indexer
+  On tableName (columnName ASC (or)Desc))
+
+
+2.NonClustered Index:
+----------------------
+                    A data is stored in one place,the index in another place. the index will have pointers to the storage location of data
+*The table can have more than one Noncluster indexer
+
+(
+ create NonClustered name of the indexer
+ ON TableName(columnName)  
+)
+
+Difference between cluster and Noncluster indexer:
+-----------------------------------------------------
+   cluster indexer                                               Nonclustered indexer
+----------------------------------                        ------------------------------------------
+* only one clustered index per table                       *the table can have more than one Nonclusterd indexer
+
+*Clustered index is faster than non clustered indexere
+ because the clustered index has to refer back to the table 
+ if the selected column is not present  in the index
+
+* clustered index determines the storage order of rows     *where as a Non clustered index is stored separately from the table , additional storage space is required
+ in the table, and hencw dioesn't requires additional 
+disk space
+
+UNIQUE and NON-UNIQUE indexes:
+------------------------------
+
+Unique:
+--------
+        unique index is used to enforce uniqueness of key values in the index
+
+Note:
+-----
+     By defaukt , PRIMERY KEY constraint, creates a unique clustered index
+
+* UNIQUENESSS is a property of an index ,and both clustered and nonclustered indexes can be unique.
+
+{
+ create unique NonClustered Index Name of the indexer
+ ON tablename(column name)
+}
+
+Difference between Unique Constraints and Unique Index:
+--------------------------------------------------------
+There are no major difference between a unique constraint and unique index . in fact, when we add a unique constraint,
+a unique index gets created behind the scenes
+
+Adavantages AND Disadavantages of index:
+-----------------------------------------
+Adavantages:
+------------
+* increase the performance of the query
+ 
+Disadvantages:
+-----------------
+* additional Disk Space:
+------------------------
+                        Clustered index doesn't requires any additional storage,Every Non-Clustered index requires additional
+space as it is stored separately fron the table
+
+*Insert Update and delete statement can become slow:
+----------------------------------------------------
+ when DML (Data manipulation language) statement (INSERT,UPDATE,DELETE)modifies data in a table, the data in all the index also needs to be Updated
+indexes can help to search and locate the rows, that we want to delete but too many indexes to Update can actually hurt the performane of data modification
+
+What is a covering query:
+--------------------------
+if all the columns that you have requested in the select clause of query, are present in index then there is no need to lookup in the table again. the requested columns
+data can simply be returned from the index
+
+* A cluster index always covers a query ,since it contains all of the data in a table. A composite index is an index on two or more columns . BOth clustred and non-clustred
+ indexes can be composite indexes. To a certain extent, a composite index can cover a query
+
+Views in sql:
+-------------
+
+A view is a Saved SQL query.A View Can also be considered as  a virtual table
+
+Ex code:
+----
+(Create View vWEmployeeByDepartment(ViewName)
+as
+select ID,Name,Salary,Gender,DeptName
+from tblEmployee
+Join tblDepartment
+on tblEmployee.DepartmentId==tblDepartment.DeptID)
+
+Advantages of Views:
+--------------------
+* views can be used to reduce the complexity of the database schema
+
+* views can be used as a mechanism to implement row and column security
+ex:
+---
+  if we want allows to see IT Department employess we return in view only IT employess
+
+create View VWrowSecurity
+as
+select * 
+from tblEmployee
+Join tblDepartment
+On tblEmplotee.DeptId==tblDepartment.DeptID
+where DeptName=='IT'
+
+* Views can be used to present aggregated data and hide details data
+ ex:
+----
+  create View vWSummery
+  as
+  DeptName,Count(ID) as totalEmployess
+  from tblEmployee
+  Join tblDepartment
+  Group By DepartmentName
+
+(To modifiy the View-> we use Alter View Statement) 
+(To drop a view-.we use Drop View VwName)
+
+
+
+
+
+
+
+s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

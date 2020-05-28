@@ -1,0 +1,16 @@
+websocket:
+------------
+
+websocket created like this ws:/Localhost:8080/Home/index or wss:/Localhost:8080/Home/index
+
+Different b/w websocket and Httpprotocol
+-----------------------------------------
+
+             Httpproctocol                                                 Websocket
+             ---------------                                              -------------
+
+*Httpprotocol is a Unidirectional                            *websocket is a Bidirectional
+
+means whenever we send the request to the                    means whenever we send the data to the server and server
+server that time it returns the repose                       also send request are respone
+

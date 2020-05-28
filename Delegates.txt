@@ -69,6 +69,7 @@ Anonymous method:
    (At the time delegate declaration we declare method name,return type ,and access modifier)
 
 class Program
+
     {
         delegate string AnonymousMethod(String Name); 
 
@@ -138,11 +139,11 @@ Ex:
 ---
  class Program
     {
-        static void Main(string[] args)
-        {
-            Action<string > obj1 = Demo.Method1;
-            obj1.Invoke("Rajesha")
-        }
+       
+            Func<string, string> obj2 = Demo.Method2;
+            string hold=obj2.Invoke("Madan");
+            Console.WriteLine(hold);
+    }
 
 syntax:
 -------
@@ -156,13 +157,15 @@ func<types parameter,return type>
 
 syntax:
 -------
-Action<types parameter,return type>
+Action<types parameter>
 
 Ex:
 ---
-    Func<string, string> obj2 = Demo.Method2;
-            string hold=obj2.Invoke("Madan");
-            Console.WriteLine(hold);
+   static void Main(string[] args)
+        {
+            Action<string > obj1 = Demo.Method1;
+            obj1.Invoke("Rajesha")
+        }
 
            
 3.predicate:

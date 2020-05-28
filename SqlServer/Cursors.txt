@@ -1,0 +1,61 @@
+CURSORS:
+--------
+
+* Cursor is a temparary memory or its Temapary work statation
+
+* Cursor will allocate by Db server at the time of DML operations are Performing by user On DB Tables.
+
+* Cursor will use for storing Database Tables.
+
+TYPE of Cursors:
+----------------
+
+1) Implicit cursors :
+_____________________
+* Default Cursors of SQL Server Database.
+* This cussor memory is allocate by DB server . When we perform DML oprations
+
+2) Explict Cursors :
+-----------------------
+*These Cursor are created By User
+*Fetch Data from table in Row-By-Row manner.
+
+
+Steps:
+--------
+
+Step1: Declare Cursor object.
+------
+Syntax:
+-------
+        Declare <CursorName>Cursor For Select * from <table name>
+
+Step2: Open Cursor connection
+------
+
+Syntax: 
+------
+      Open <Cursor Connection>
+
+step3: Fetch Data from Cursor
+
+Syntax:
+--------
+        Fetch <Method Names>(First/Next/Last/PRIOR/ABSOLUTE n/Relative n)
+        From <Cursor Name> [Into Variables]
+
+step4: Close Cursor Connection
+------
+
+Syntax:
+-------
+       Close<Cursor Connection>
+
+Step: Deallocate Cursor Memory
+
+Syntax :
+-------
+         Deallocate <Cursor Name>
+
+https://www.red-gate.com/simple-talk/sql/performance/execution-plan-basics/
+

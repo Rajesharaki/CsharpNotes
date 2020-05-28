@@ -1,0 +1,12 @@
+1.What is an HTML helper?
+Ans:
+------
+An html helper is a method that is used to render html content in a view .HTML helpers are implemented as extension methods
+
+To produce the HTML for textbox with is="firstname" and name="firstname"
+<input type="text" name="firstname" id="firstname"/>
+
+or
+
+we can use the textbox html helper
+@html.TextBox("firstname");

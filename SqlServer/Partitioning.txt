@@ -1,0 +1,13 @@
+1.Partition function
+2.Partition schema
+3.Partition column
+
+1.Partition Function:
+----------------------
+Partion function used for Identifying the number of partition boundary or range of the partition .
+
+
+2.Partion Schema :
+-------------------
+Partion schema used to creating the mapping between Partion function and file groups
+

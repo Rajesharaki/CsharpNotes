@@ -1,4 +1,4 @@
-1) Why do we need Design Patterns?
+﻿1) Why do we need Design Patterns?
 
 * How to properly create a class
 * How to interact between object
@@ -159,14 +159,18 @@ package com.journaldev.singleton;
 public class ThreadSafeSingleton {
 
     private static ThreadSafeSingleton instance;
+    private static Object obj=new Object();
     
     private ThreadSafeSingleton(){}
     
     public static synchronized ThreadSafeSingleton getInstance(){
-        if(instance == null){
+	      lock(obj)
+      {
+            if(instance == null){
             instance = new ThreadSafeSingleton();
         }
         return instance;
+      }
     }
     
 }
@@ -205,7 +209,7 @@ public class BillPughSingleton {
     private BillPughSingleton(){}
     
     private static class SingletonHelper{
-        private static final BillPughSingleton INSTANCE = new BillPughSingleton();
+         static final BillPughSingleton INSTANCE = new BillPughSingleton();
     }
     
     public static BillPughSingleton getInstance(){

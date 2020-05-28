@@ -1,0 +1,15 @@
+
+Types of Triggers:
+------------------
+1.DML Triggers
+2.DDL Triggers
+3.Logon Triggers
+
+
+* DML Triggers are fired automatically in response to DML events (Insert,Update & Delete)
+
+DML Triggers can be again classified into 2 types
+1.After Triggers (Sometimes called as ForTriggers)
+2.Instead of Triggers
+
+

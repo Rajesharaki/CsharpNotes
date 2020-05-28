@@ -1,0 +1,83 @@
+Create Socket:
+--------------
+by using socket we can communicate with the remote or connecting,sending ,Reciveing stream data from client to server and vice-versa
+
+*Creating a Socket it takes three parameter AddressFamily,SocketType,ProtocolType
+
+Socket socket=new Socket(AddressFamily.InterNetwork,SocketType.Dgram,Prototype);
+
+
+* The AddressFamily enumeration specifies the standard address families used by the Socket class to resolve network addresses (for example, the AddressFamily.
+  InterNetwork member specifies the IP version 4 address family).
+
+* The SocketType enumeration specifies the type of socket (for example, the SocketType.Stream member indicates a standard socket for sending and receiving data with flow control).
+
+* The ProtocolType enumeration specifies the network protocol to use when communicating on the Socket (for example, ProtocolType.Tcp indicates that the socket uses TCP; 
+  ProtocolType.Udp indicates that the socket uses UDP).
+
+
+Dns:
+----
+Dns class provide the domin name services to applications that use TCP/IP Internet services.
+
+To getting Ip address
+---------------------_
+
+IPHostEntry host=Dns.GetHostEntry(Dns.GetHostName)
+foreach(var Ip inhost.AddressList)
+{
+   if(Ip.AddressFamily==AddressFamily.InterNetwork)
+        return Ip;
+}
+
+EndPoint:
+---------
+It is Abstract class . The combination of network address and service port is called an endpoint,
+
+
+Asynchronus:
+------------
+
+The Socket class follows the .NET Framework naming pattern for asynchronous methods; for example, the synchronous Receive method corresponds to the asynchronous BeginReceive and EndReceive
+methods.
+
+Asynchronous operations require a callback method to return the result of the operation. If your application does not need to know the result, then no callback method is required.
+The example code in this section demonstrates using a method to start connecting to a network device and a callback method to complete the connection, a method to start sending data and 
+a callback method to complete the send, and a method to start receiving data and a callback method to end receiving data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
