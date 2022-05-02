@@ -16,13 +16,13 @@ there are 5 types of inheritance
 1.Single Inheritance:
                      One child class extends one parent class
 
-2.Multiple Inheritance:
+2.MultiLevel Inheritance:
                      one child class extends Parent class again another child class extends Already derived child class.
 
 3.Hierarchical Inheritance:
                      Two child class extends one parent class
 
-4.MultiLevel Inheritance:
+4. Multiple Inheritance:
                      One child class Extends two parent class.
 
   -->this type of inheritance is possible only in inheritance.
