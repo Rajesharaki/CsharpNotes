@@ -25,7 +25,7 @@ there are 5 types of inheritance
 4. Multiple Inheritance:
                      One child class Extends two parent class.
 
-  -->this type of inheritance is possible only in inheritance.
+  -->this type of inheritance is possible only in interface.
   -->this type of Inheritance is not Possible in class due to
        *Ambiguting in Constractor chaining
        *Method duplication is Possible in this type of Inheiritance
