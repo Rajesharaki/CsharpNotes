@@ -1,0 +1,628 @@
+
+CLR (Common Language Runtime):
+---------------------------------
+Common Language Runtime (CLR) manages the execution of . NET programs.
+
+
+JIT (Just in time)
+-------------------
+JIT Converts Intermediate language into the machine code and it is the part of CLR.
+
+
+ManagedCode
+------------
+* The code, which is developed in .NET framework, is known as managed code.This code is directly executed by CLR with help of managed code execution. Any language that is written in .NET Framework is managed code.
+ ex: C#,VB.net 6.0,F#
+
+UnmangedCode
+------------
+* The code, which is developed outside .NET, Framework is known as unmanaged code.Applications that do not run under the control of the CLR 
+
+ex:C++,C
+
+class:
+-------
+* Class is a blue print of real world physical entity
+
+* By using class we can achive Encapsulation
+
+* We can create multiple objects by using Single class
+
+
+Encapsulation:
+--------------
+Encapsulation is a process of binding Datamembers in a single unit, 
+
+
+Constructor:
+------------
+*Constructor is a special method,by using constructor we can initialize a varaiables data also it helps to create a objects.
+
+*Constructor name should be same as class
+
+
+Types of Constructor:
+--------------------
+
+1.Default Constructor
+----------------------
+A constructor without any parameters is called a Default constructor and Default Constructor is automatically genarated by the CLR
+
+2.Parameterized Constructor:
+-----------------------------
+A constructor with at least one parameter is called a parameterized constructor
+
+3.No Parameterized Constructor:
+-------------------------------
+A constructor without any parameters is called a No Parameterized constructor
+
+5.Copy Constructor
+------------------
+A parameterized constructor that contains a parameter of same class type is called as copy constructor
+
+ex:
+public employee(employee emp)
+{
+    name=emp.name;
+    age=emp.age;
+}
+
+6.Static Constructor
+---------------------
+* When a constructor is created using a static keyword
+
+* A static constructor does not take access modifiers or have parameters.
+
+7.Private Constructor 
+----------------------
+When a constructor is created with a private specifier
+
+
+==============================================================================================================================================
+object:
+-------
+object is a instance of a class that is created dynamically and which contains state and behaviour init
+
+
+datatype:
+---------
+C# is a strongly-typed language. It means we must declare the type of a variable that indicates the kind of values it is going to store, such as integer, float, decimal, double,bool,short, etc. 
+
+Types of variable:
+-------------------
+
+Global variable:
+----------------
+A  global variable is a variable that can access anywhere
+
+local variable:
+-----------------
+A  local variable is a variable that can access within the declared scope
+
+
+variable showding:
+-------------------
+variable shadowing occurs when a variable declared within a certain scope (decision block, method, or inner class) has the same name as a variable declared in an outer scope.
+
+====================================================================================================================================================
+
+static                                        non static
+
+1.Static members are Class members        1.Non static members are instance member
+
+2.static member have only one copy of     2.Non static member can have 'N' number of files
+file
+
+3.static member will load even before     3.Non Static members are load once we create instance
+class members are load into the CLR
+
+====================================================================================================================================================
+Interface:
+----------
+* By using interface keyword we can create interface
+
+* Interface helps to achive abstraction
+
+* Can't create constructor of the interface and we can't create instance of interface
+
+* By using interface we can achive multiple inheritance
+
+* we can't inherit class and abstract class inside the  inteface
+
+* we can't create instance variable inside interface but we can create properties
+
+
+abstract class
+---------------
+* By using abstract keyword we can create abstract class.
+
+* we can create abstract methods inside abstract class.
+
+* abstract class helps to achive abstraction
+
+* we can't create instance of abstract class but abstract class can have constructor only for intializing the variables
+
+* we can't achive multiple inheritance by using abstract class.
+
+* we can inherit interface inside abstract class
+
+* We can create variables inside abstract class
+
+==================================================================================================================================================
+abstraction
+------------
+abstraction is the process to hide the internal details and showing only the functionality.
+
+Inheritance
+-----------
+Inheritance is the process of inheriting the states and behaviours from parent to child.
+
+Types of Inheritance
+----------------------
+
+Multiple inheritance
+--------------------
+* one class can have more than one superclass and inherit features from all its parent classes is called Multiple inheritance.
+
+* We can achive multiple inheritance in interface.
+
+* we can't achive multiple inheritance in class and abstract class
+
+
+Why we can't achive Multiple Inheritance in class?
+----------------------------------------------------
+Ans: because of two reason
+
+* ambiguity in the constructor chaining.
+
+* Implementing multiple inheritance in the class and abstract class it causes method duplications
+
+virtual key word
+-----------------
+* Using viratual keyword we can override concrete methods.
+
+abstract method
+---------------
+* Method have a declaration without any logic block is called abstract method
+
+concrete method
+---------------
+* Method have a declaration along with the logic block is called concrete method
+
+method oveloading
+------------------
+*  more than two methods having the same name but different signature is called method overloading
+
+method overriding
+-----------------
+* method overriding will occurs only in the inheritance
+
+* child class method have same method declaration as super class method but change in the method logic is called method overriding
+
+
+ method overloding                                method overriding
+
+1. Method overloading is a                     1.Method overriding is a run-time polymorphism.
+   compile-time polymorphism.
+
+2.It occurs within the class.                  2.it occurs only in the inheritance
+
+
+3.In method overloading,                       3.In method overriding, the return type must be the same
+the return type can or can not be the same, 
+but we just have to change the parameter.
+
+4. No need to use any keyword to create        4.Need override keyword to create  method overriding.
+method overloading
+
+5.we can overload static methods               5.we can't override static methods
+
+
+method duplication
+-------------------
+* more than two methods having the same name and same signature is called method duplication and we can't create duplication methods in c#
+
+
+Constructor chaining
+---------------------
+*  Constructor Chaining is the process of calling one constructor of a class from another constructor of the same class or another class
+is called constructor chaining
+
+* To call Super class constructor we use base key word
+
+* To Call same class Constructor we use this keyword
+
+* Constructor chaining code will excute first 
+
+* every class in c# will automatically call super class constructor
+
+* Object class is the parent class for every class in c#
+
+=====================================================================================================================================================
+
+Polymorphism
+--------------
+* Any thing which represent in multiple form is called polymorphism
+
+There are 2 type polymorphism
+
+1.Compiletime polymorphism/early binding
+
+2.runtime polymorphism/late binding
+
+
+Compiletime polymorphism:
+-------------------------
+
+* whenever we invoke method that binding decision is taken by the compiler is called Compiletime polymorphism
+
+Ex: Method overloading
+
+
+Runtime polymorphism:
+---------------------
+
+* whenever we invoke method that binding decision is taken by the CLR at the runtime is called Runtime polymorphism
+
+Ex:method overriding
+
+
+
+Access modifiers:
+----------------
+Access modifiers are keywords used to specify the  accessibility of a member
+
+
+MethodExtension
+---------------
+
+
+Type Casting:
+-------------
+Converting one datatype to another datatype is called Type casting
+
+there are two types of casting
+
+1.Implicit Casting
+2.Explicit Casting
+
+1.Implicit Casting (automatically):
+------------------------------------
+converting a smaller type to a larger type size
+char -> int -> long -> float -> double
+
+Ex: boxing and upcasting
+ex:
+---
+int myInt = 9;
+double myDouble = myInt;
+
+
+2.Explicit Casting (manually):
+-------------------------------
+converting a larger type to a smaller size type
+double -> float -> long -> int -> char
+
+ex:unboxing and downcasting
+
+ex:
+---
+double myDouble = 9.78;
+int myInt = (int) myDouble; 
+
+
+1.Boxing
+---------
+Boxing is a process of converting value type to reference type is called Boxing
+
+Ex:
+---
+int i = 123;
+object o = i;
+
+2.Unboxing:
+--------------
+Unboxing is a process of converting reference type to value type is called unboxing
+
+o = 123;
+i = (int)o;  // unboxing
+
+
+3.UpCasting:
+------------
+Creating Subclass object and Casting into the super class refernce is called Upcasting
+
+Ex:Animal a=new Dog();
+
+4.DownCasting:
+--------------
+Creating SuperClass refernce and Casting into the Sub Class reference is called Downcasting
+
+Dog d=(Dog)new Animal();
+
+
+Why we need Properties:
+-----------------------
+
+* we can access private members by using properties
+
+* it helps to create readonly/writeonly access for the member
+
+* By using properties we set validation
+
+
+
+Array                                                              ArrayList
+--------                                                         ---------------
+
+1.An Array is strongly-typed.                            1.ArrayList is a non-generic collection type
+We can store only the same type of data                    we can store multiple types of data
+
+2.Array is a fixed size                                  2.ArrayList is not a fixedsize its dynamic
+
+3.We can't add null value in Array                       3.we can add null value in Array List
+
+4.Array belongs to System namespace                      4.ArrayList belongs to System.Collection namespace
+
+5.No need to cast elements of an array                   5.need to cast elements of an ArrayList while retriving because it is not
+while retrieving because it is strongly                    Strongly types.
+typed and stores a specific type of items only.
+
+6.Performs faster than ArrayList because                 6.Performs slows because of boxging and unboxing.
+  it is strongly typed.
+
+7.Array is contiguous memory                             7.ArrayList is not a contiguous memory
+
+
+List vs HashSet
+------------------
+
+==============================================================================================================================================
+
+Logging:
+--------
+Logging which helps to store informative /error details in file or  any external sources.
+
+
+
+Genrics:
+--------
+Generic is a class which allows the user to define classes and methods with the placeholder.
+
+Advantages:
+-----------
+1.Type safety.
+2.Less code and code is more easily reused.
+3.Better performance. 
+
+Generic constraints:
+--------------------
+Generic constraints helps to restrict specify certain types while instantiating generic types
+
+syntax:
+-------
+
+where T: contraint1, constraint2
+
+class--->reference type (Allows reference type)
+
+struct -->value type
+
+new() -->it will not allow interface,abstract,string
+
+IEnumerable--->it will allow Ienumerable child class type
+
+
+REGEX:
+------
+Regular Expression is a pattern which is used to check whether the given input text is matching with the given pattern or not.
+
+
+
+[abc]-->a or b or c  
+
+[^abc]--->any character except a,b,c
+
+[a-z] --->a to z  
+
+[A-Z]--->A to Z
+
+[a-z A-Z] --->a to z,A to Z
+
+[0-9] --->0 to 9  ^[6789][0-9]{9}$   
+
+
+Quantifiers
+------------
+
+[ ]?  -->Occurs 0 or 1 times [a-z]? // 
+
+[ ]+  --->occurs 1 or more time //a ab
+
+[ ]* --->occurs 0 or more times
+
+[ ]{n} --->occurs n times -->ex: 5 times ///54545
+
+[] {n,} -->occurs n or more times
+
+[] {x,y} --> occurs atleat x times but less than y times
+
+()     -->Group regular exp  (com) in com
+
+?      --->Matches up exactly one char
+
+
+Regex metacharacter (short forms)
+--------------------
+
+\d  [0-9] //
+
+\D  [^0-9]
+
+\w  [a-z A-z _ 0-9] 
+
+\W  [^\w]
+
+
+
+\ tells comp to trear following char as search char for ex: +,-
+
+
+1.Mobile number ->start with 8 or 9 and total digit=10
+Ans:
+    [89][0-9]{9}
+
+
+2.First char uppercase,contains lower case alph only one digit allowed in b/w
+Ans:
+    [A-Z][a-z]*[0-9][a-z]*
+
+3.Email id ()
+Ans:
+    [a-zA-Z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}
+
+
+. means "any character".
+* means "any number of this".
+^ indicates the beginning of the string.
+$ indicates the end of the string.
+
+
+UnitTesting:
+-------------
+
+Stub - an object that provides predefined answers to method calls.
+
+Mock - an object on which you can set expectations.
+
+Fake - Fake object actually have working implementation
+
+
+Exception:
+----------
+An exception is a problem that arises during the execution of a program.
+
+There two type of exception
+----------------------------
+1.checked exception (Imp: C# does not have checked exception its belongs to java)
+--------------------
+A checked exception is an exception that occurs at the compile time, these are also called as compile time exceptions
+
+2.unchecked exception
+--------------------
+A unchecked exception is an exception that occurs at the Run time, these are also called as run time exceptions
+
+keywords:
+---------
+1.Checked keyword:
+--------------------
+checked keywords helps to check if  the destination datatype is overflow in a arthamatic calculation
+
+2.unchecked keyword:
+----------------------
+Unchecked keywords behaves almost the same way as  default ,But  is useful to by pass the const datatypes 
+
+================================================================================================================================================
+
+Reflection:
+-----------
+Reflection is the process of describing the metadata of types, methods and fields in a code
+
+SQL
+===
+Normalization is the technique of dividing the data into multiple tables 
+to reduce data redundancy to achive dataintegrity (the accuracy and consistency of data stored in a database)
+
+1st NF
+2nd NF
+3rd NF
+
+Denormalization is the technique of combining the data into a single table to make data retrival faster
+
+
+1NF:
+The data in each column should be atomic
+The table doesn't contain any repeating column groups
+Identify each record uniquely by using primary key
+
+
+2NF
+The table meets all the condition of 1NF
+Move redundata data to separate table
+Create relationship between these table using foreign keys
+
+
+3rd NF
+Meets all the conditions of 1NF and 2NF
+Doesn't contain columns(attributes) that are not fully dependent upon the primary key
+
+
+
+LINQ(Language-Integrated Query )
+---------------------------------
+LINQ offers a common syntax for querying any type of data sources
+
+
+Process:
+---------
+A process is a program that is running on your computer
+
+Thread:
+-------
+* Thread is a light weight sub process.
+* A thread is defined as the execution path of a program
+* A Process has at least one thread which is commonly called as main thread which actually excutes the application code.
+
+Multi-threading
+---------------
+Multi-threading is a process that contains multiple threads within a single process
+
+
+json-server
+-----------
+$ npm install --location=global json-server
+
+node -v
+
+$ npx json-server --watch db.json
+
+$ npx json-server --port 5000 --routes routes.json --watch db.json
+
+
+
+
+
+
+
+
+
+
+class vs struct vs enum
+
+const vs static vs readonly
+
+== vs Equals
+
+CRUD
+-----
+
+Create  --HTTPPOST
+
+Read     --HTTPGET
+
+Update  --HTTPPUT
+
+Delete  --HTTPDELETE
+
+
+4 4.5
+
+
+
+
+
+
+
+
+
+
